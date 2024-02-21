@@ -6,6 +6,7 @@ import Avatar from "../Avatar";
 import MenuItem from "./MenuItem";
 // import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
 
 // import useLoginModal from "@/app/hooks/useLoginModal";
 // import useRegisterModal from "@/app/hooks/useRegisterModal";
@@ -22,6 +23,8 @@ import { useRouter } from "next/navigation";
 const UserMenu = () => {
 
     const currentUser = null;
+
+    const registerModal = useRegisterModal();
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -89,11 +92,11 @@ const UserMenu = () => {
                                 {/* <MenuItem
                                     label="Login"
                                     onClick={loginModal.onOpen}
-                                />
+                                /> */}
                                 <MenuItem
                                     label="Sign up"
                                     onClick={registerModal.onOpen}
-                                /> */}
+                                />
                             </>
                         )}
                     </div>
