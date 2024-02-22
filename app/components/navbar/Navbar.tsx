@@ -33,7 +33,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     </div>
                 </Container>
             </div>
-            {/* <Categories /> */}
+            <Categories />
         </div>
 
     )
