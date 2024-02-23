@@ -26,6 +26,8 @@ const LoginModal = () => {
 
     const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
+
+
     const [isLoading, setIsLoading] = useState(false);
 
 
@@ -67,8 +69,8 @@ const LoginModal = () => {
 
     }
     const onToggle = useCallback(() => {
-        registerModal.onClose();
-        loginModal.onOpen();
+        registerModal.onOpen();
+        loginModal.onClose();
     }, [registerModal, loginModal])
 
     const bodyContent = (
@@ -113,23 +115,17 @@ const LoginModal = () => {
                 icon={AiFillGithub}
                 onClick={() => signIn('github')}
             />
-            <div
-                className="
-              text-neutral-500 
-              text-center 
-              mt-4 
-              font-light
-            "
-            >
-                <p>Already have an account?
+            <div className="
+      text-neutral-500 text-center mt-4 font-light">
+                <p>First time using Airbnb?
                     <span
                         onClick={onToggle}
                         className="
-                  text-neutral-800
-                  cursor-pointer 
-                  hover:underline
-                "
-                    > Log in</span>
+              text-neutral-800
+              cursor-pointer 
+              hover:underline
+            "
+                    > Create an account</span>
                 </p>
             </div>
         </div>
