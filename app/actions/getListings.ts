@@ -1,14 +1,20 @@
+import { BsSafe } from "react-icons/bs";
 import prisma from "../libs/prismadb";
 export default async function getListing() {
     try {
 
         const listings = await prisma.listing.findMany({
             orderBy: {
-                createdAt: "desc"
-            },
-        })
+                createdAt: 'desc'
+            }
+        });
 
-        return listings;
+        const safeListings = listings.map((listing) => ({
+            ...listing,
+            createdAt: listing.createdAt.toISOString(),
+        }));
+
+        return safeListings;
 
 
 
